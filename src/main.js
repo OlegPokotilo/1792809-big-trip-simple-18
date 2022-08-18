@@ -1,14 +1,17 @@
 import FiltersView from './view/filters-view.js';
-import SortingView from './view/sorting-view.js';
-import CreationFormView from './view/creationForm-view.js';
-import FormEditorView from './view/editForm-view.js';
+import ListPresenter from './presenter/list-presenter.js';
+/* import TripMainButtonView from './view//trip-main-button-view.js'; */
 import {render} from './render.js';
 
-const siteMainElement = document.querySelector('.page-body');
-const siteFiltersElement = siteMainElement.querySelector('.trip-controls__filters');
-const siteTripEventsElement = siteMainElement.querySelector('.trip-events');
+const listPresenter = new ListPresenter();
+const siteBodyElement = document.querySelector('.page-body');
+const siteFiltersElement = siteBodyElement.querySelector('.trip-controls__filters');
+const siteTripEventsElement = siteBodyElement.querySelector('.trip-events');
+
+/* const siteTrip = siteBodyElement.querySelector('.trip-main');       здесь проверил, что кнопка отрисовывается
+render(new TripMainButtonView(), siteTrip); */
 
 render(new FiltersView(), siteFiltersElement);
-render(new SortingView(), siteTripEventsElement);
-render(new CreationFormView(), siteTripEventsElement);
-render(new FormEditorView(), siteTripEventsElement);
+listPresenter.init(siteTripEventsElement );
+
+

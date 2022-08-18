@@ -1,6 +1,6 @@
 import {createElement} from '../render.js';
 
-const createFormView = () => `<li class="trip-events__item">
+const createPointEditView = () => `<li class="trip-events__item">
 <form class="event event--edit" action="#" method="post">
   <header class="event__header">
     <div class="event__type-wrapper">
@@ -163,9 +163,9 @@ const createFormView = () => `<li class="trip-events__item">
 </form>
 </li>`;
 
-export default class CreationFormView {
+export default class PointEditView {
   getTemplate() {
-    return createFormView();
+    return createPointEditView();
   }
 
   getElement() {
